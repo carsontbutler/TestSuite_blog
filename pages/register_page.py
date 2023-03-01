@@ -1,4 +1,8 @@
-from selenium.webdriver.common.by import By
+import pytest
+from .base_page import BasePage
 
-class RegisterPage():
+class RegisterPage(BasePage):
+    page_title = 'Django Blog'
+    slug = 'register'
     pass
+
