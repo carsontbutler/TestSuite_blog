@@ -3,10 +3,13 @@ from .base_page import BasePage
 from selenium.webdriver.common.by import By
 
 class RegisterPage(BasePage):
-
-    register_page_btn = (By.XPATH, '//*[@id="navbarToggle"]/div[2]/a[2]')
-    register_btn = (By.XPATH, '/html/body/main/div/div[1]/div/form/div/button')
-
+    #Properties
     page_title = 'Django Blog'
     slug = 'register'
-    
+
+    #Locators
+    REGISTER_BTN = (By.XPATH, '/html/body/main/div/div[1]/div/form/div/button')
+    USERNAME_FIELD = (By.ID, 'id_username')
+    EMAIL_FIELD = (By.ID, 'id_email')
+    PASSWORD1_FIELD = (By.ID, 'id_password1')
+    PASSWORD2_FIELD = (By.ID, 'id_password2')

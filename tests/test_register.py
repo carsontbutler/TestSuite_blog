@@ -1,7 +1,23 @@
 import pytest
+import time
 from TestSuite.tests.test_base import BaseTest
+
+#change to import
+data = {
+    "username": "Carson",
+    "email": "Carson@testing123.com",
+    "password": "Testing123"
+}
 
 class TestRegister(BaseTest):
 
-    def test_check_page_title(self):
+    def test_go_to_register_page(self):
+        self.pages['home_page'].click_register_link()
         assert self.pages['register_page']._driver.title == self.pages['register_page'].page_title
+
+    def test_register_with_valid_input(self):
+        self.pages['register_page'].send_keys(self.pages['register_page'].USERNAME_FIELD, data['username'])
+        self.pages['register_page'].send_keys(self.pages['register_page'].EMAIL_FIELD, data['email'])
+        self.pages['register_page'].send_keys(self.pages['register_page'].PASSWORD1_FIELD, data['password'])
+        self.pages['register_page'].send_keys(self.pages['register_page'].PASSWORD2_FIELD, data['password'])
+        self.pages['register_page'].click(self.pages['register_page'].REGISTER_BTN)
