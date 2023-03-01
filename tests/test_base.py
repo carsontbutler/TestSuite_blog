@@ -5,6 +5,3 @@ class BaseTest:
     def injector(self, pages):
         # instantiates pages object, and data readers
         self.pages = pages
-
-    
-    
