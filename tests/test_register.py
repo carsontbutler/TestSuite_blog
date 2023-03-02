@@ -4,8 +4,8 @@ from TestSuite.tests.test_base import BaseTest
 
 #change to import
 data = {
-    "username": "C456",
-    "email": "Carson1@t345.com",
+    "username": "C45666",
+    "email": "Carson1@t3456.com",
     "password": "Testing123!!"
 }
 
