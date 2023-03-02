@@ -4,14 +4,14 @@ from TestSuite.tests.test_base import BaseTest
 
 #change to import
 data = {
-    "username": "C45666",
-    "email": "Carson1@t3456.com",
+    "username": "C456662",
+    "email": "Carson12@t3456.com",
     "password": "Testing123!!"
 }
 
 class TestRegister(BaseTest):
 
-    def test_go_to_register_page(self):
+    def test_go_to_register_page(self, go_home):
         self.pages['home_page'].click_register_link()
         assert self.pages['register_page']._driver.title == self.pages['register_page'].page_title
 

@@ -4,7 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 class BasePage:
     def __init__(self, driver):
         self._driver = driver
-        self._wait = WebDriverWait(self._driver, 10)
+        self._wait = WebDriverWait(self._driver, 5)
 
     def click(self, webelement):
         el = self._wait.until(EC.element_to_be_clickable(webelement))

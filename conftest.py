@@ -15,8 +15,10 @@ def pages():
 def create_driver():
     global driver
     driver = webdriver.Chrome()
-    driver.get(base_url)
     yield driver
     driver.close()
     driver.quit()
 
+@pytest.fixture
+def go_home():
+    driver.get(base_url)
