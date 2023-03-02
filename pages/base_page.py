@@ -19,5 +19,3 @@ class BasePage:
         el = self._wait.until(EC.presence_of_element_located(webelement))
         text = el.text
         return text
-        
-
