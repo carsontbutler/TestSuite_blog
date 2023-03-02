@@ -14,5 +14,6 @@ class RegisterPage(BasePage):
     PASSWORD1_FIELD = (By.ID, 'id_password1')
     PASSWORD2_FIELD = (By.ID, 'id_password2')
 
-    #Expected results
+    #Expected output
     REGISTRATION_SUCCESS_TEXT = 'Your account has been created! You are now able to log in'
+    USERNAME_BLANK_ERROR = 'Please fill out this field.'

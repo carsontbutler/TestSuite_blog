@@ -1,24 +1,36 @@
 import pytest
 import time
 from TestSuite.tests.test_base import BaseTest
-
-#change to import
-data = {
-    "username": "C456662",
-    "email": "Carson12@t3456.com",
-    "password": "Testing123!!"
-}
+from TestSuite.test_data import data
 
 class TestRegister(BaseTest):
 
     def test_go_to_register_page(self, go_home):
-        self.pages['home_page'].click_register_link()
-        assert self.pages['register_page']._driver.title == self.pages['register_page'].page_title
+        home_pg = self.pages['home_page']
+        register_pg = self.pages['register_page']
+
+        home_pg.click_register_link()
+        assert register_pg._driver.title == register_pg.page_title
 
     def test_register_with_valid_input(self):
-        self.pages['register_page'].send_keys(self.pages['register_page'].USERNAME_FIELD, data['username'])
-        self.pages['register_page'].send_keys(self.pages['register_page'].EMAIL_FIELD, data['email'])
-        self.pages['register_page'].send_keys(self.pages['register_page'].PASSWORD1_FIELD, data['password'])
-        self.pages['register_page'].send_keys(self.pages['register_page'].PASSWORD2_FIELD, data['password'])
-        self.pages['register_page'].click(self.pages['register_page'].REGISTER_BTN)
-        assert self.pages['home_page'].wait_for_text(self.pages['home_page'].ALERT) == self.pages['register_page'].REGISTRATION_SUCCESS_TEXT
+        register_pg = self.pages['register_page']
+        home_pg = self.pages['home_page']
+
+        home_pg.click_register_link()
+        register_pg.send_keys(register_pg.USERNAME_FIELD, data['register_valid']['username'])
+        register_pg.send_keys(register_pg.EMAIL_FIELD, data['register_valid']['email'])
+        register_pg.send_keys(register_pg.PASSWORD1_FIELD, data['register_valid']['password'])
+        register_pg.send_keys(register_pg.PASSWORD2_FIELD, data['register_valid']['password'])
+        register_pg.click(register_pg.REGISTER_BTN)
+        assert home_pg.get_element(home_pg.ALERT).text == register_pg.REGISTRATION_SUCCESS_TEXT
+
+    def test_register_with_blank_username(self, go_home):
+        register_pg = self.pages['register_page']
+        home_pg = self.pages['home_page']
+
+        home_pg.click_register_link()
+        register_pg.send_keys(register_pg.EMAIL_FIELD, data['register_valid']['email'])
+        register_pg.send_keys(register_pg.PASSWORD1_FIELD, data['register_valid']['password'])
+        register_pg.send_keys(register_pg.PASSWORD2_FIELD, data['register_valid']['password'])
+        register_pg.click(register_pg.REGISTER_BTN)
+        assert register_pg.get_element(register_pg.USERNAME_FIELD).get_attribute("validationMessage") == register_pg.USERNAME_BLANK_ERROR
