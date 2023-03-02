@@ -15,3 +15,9 @@ class BasePage:
         el.clear()
         el.send_keys(text)
 
+    def wait_for_text(self, webelement):
+        el = self._wait.until(EC.presence_of_element_located(webelement))
+        text = el.text
+        return text
+        
+

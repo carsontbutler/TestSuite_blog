@@ -4,9 +4,9 @@ from TestSuite.tests.test_base import BaseTest
 
 #change to import
 data = {
-    "username": "Carson",
-    "email": "Carson@testing123.com",
-    "password": "Testing123"
+    "username": "C456",
+    "email": "Carson1@t345.com",
+    "password": "Testing123!!"
 }
 
 class TestRegister(BaseTest):
@@ -21,3 +21,4 @@ class TestRegister(BaseTest):
         self.pages['register_page'].send_keys(self.pages['register_page'].PASSWORD1_FIELD, data['password'])
         self.pages['register_page'].send_keys(self.pages['register_page'].PASSWORD2_FIELD, data['password'])
         self.pages['register_page'].click(self.pages['register_page'].REGISTER_BTN)
+        assert self.pages['home_page'].wait_for_text(self.pages['home_page'].ALERT) == self.pages['register_page'].REGISTRATION_SUCCESS_TEXT
