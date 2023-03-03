@@ -13,7 +13,10 @@ class RegisterPage(BasePage):
     EMAIL_FIELD = (By.ID, 'id_email')
     PASSWORD1_FIELD = (By.ID, 'id_password1')
     PASSWORD2_FIELD = (By.ID, 'id_password2')
+    ERROR_LIST = (By.CLASS_NAME, 'errorlist')
 
-    #Expected output
+    #Expected outputs
     REGISTRATION_SUCCESS_TEXT = 'Your account has been created! You are now able to log in'
     BLANK_INPUT_ERROR = 'Please fill out this field.'
+    INVALID_EMAIL_ERROR_1 = 'Enter a valid email address.'
+    INVALID_EMAIL_ERROR_2 = "Please include an '@' in the email"
