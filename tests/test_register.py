@@ -1,7 +1,9 @@
 from TestSuite.tests.test_base import BaseTest
 from TestSuite.test_data import data
+import pytest
 
 
+@pytest.mark.order(1)
 class TestRegister(BaseTest):
 
     def test_go_to_register_page(self, go_home):

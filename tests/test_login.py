@@ -1,8 +1,10 @@
+import pytest
 from TestSuite.tests.test_base import BaseTest
 from TestSuite.test_data import data
 from TestSuite.pages.logout_page import LogoutPage
 
 
+@pytest.mark.order(2)
 class TestLogin(BaseTest):
 
     def test_login_with_blank_password(self, go_home):
