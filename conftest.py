@@ -3,6 +3,7 @@ from selenium import webdriver
 from TestSuite.pages.register_page import RegisterPage
 from TestSuite.pages.home_page import HomePage
 from TestSuite.pages.login_page import LoginPage
+from TestSuite.pages.logout_page import LogoutPage
 
 base_url = 'http://localhost:8000'
 
@@ -11,6 +12,7 @@ def pages():
     register_page = RegisterPage(driver)
     home_page = HomePage(driver)
     login_page = LoginPage(driver)
+    logout_page = LogoutPage(driver)
     return locals()
 
 @pytest.fixture(autouse=True, scope="session")

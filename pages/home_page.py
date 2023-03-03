@@ -7,6 +7,7 @@ class HomePage(BasePage):
     #Top Navigation
     LOGIN_LINK = (By.XPATH, '//*[@id="navbarToggle"]/div[2]/a[1]')
     REGISTER_LINK = (By.XPATH, '//*[@id="navbarToggle"]/div[2]/a[2]')
+    LOGOUT_LINK = (By.XPATH, '//*[@id="navbarToggle"]/div[2]/a[3]')
 
     #Misc
     ALERT = (By.CLASS_NAME, 'alert')
