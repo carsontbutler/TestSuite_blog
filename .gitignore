@@ -2,3 +2,6 @@
 __pycache__/
 __pycache__/*
 *.pyc
+pages/pycache/*
+pages/*.pyc
+tests/*.pyc
