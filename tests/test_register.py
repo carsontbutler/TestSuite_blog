@@ -46,6 +46,17 @@ class TestRegister(BaseTest):
         register_pg.click(register_pg.REGISTER_BTN)
         assert register_pg.get_element(register_pg.PASSWORD2_FIELD).get_attribute("validationMessage") == register_pg.BLANK_INPUT_ERROR
 
+    def test_register_with_blank_email(self, go_home):
+            register_pg = self.pages['register_page']
+            home_pg = self.pages['home_page']
+
+            home_pg.click_register_link()
+            register_pg.send_keys(register_pg.USERNAME_FIELD, data['register_valid']['username'])
+            register_pg.send_keys(register_pg.PASSWORD1_FIELD, data['register_valid']['password'])
+            register_pg.send_keys(register_pg.PASSWORD2_FIELD, data['register_valid']['password'])
+            register_pg.click(register_pg.REGISTER_BTN)
+            assert register_pg.get_element(register_pg.EMAIL_FIELD).get_attribute("validationMessage") == register_pg.BLANK_INPUT_ERROR
+
     def test_register_with_valid_input(self, go_home):
         register_pg = self.pages['register_page']
         home_pg = self.pages['home_page']
