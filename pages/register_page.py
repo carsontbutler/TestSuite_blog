@@ -16,4 +16,4 @@ class RegisterPage(BasePage):
 
     #Expected output
     REGISTRATION_SUCCESS_TEXT = 'Your account has been created! You are now able to log in'
-    USERNAME_BLANK_ERROR = 'Please fill out this field.'
+    BLANK_INPUT_ERROR = 'Please fill out this field.'
