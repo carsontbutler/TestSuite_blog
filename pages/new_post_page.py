@@ -13,4 +13,5 @@ class NewPostPage(BasePage):
 
     #Expected outputs
     PAGE_HEADER_TEXT = 'Blog Post'
+    BLANK_INPUT_ERROR = 'Please fill out this field.'
     
