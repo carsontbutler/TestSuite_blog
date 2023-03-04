@@ -6,6 +6,7 @@ from TestSuite.pages.login_page import LoginPage
 from TestSuite.pages.logout_page import LogoutPage
 from TestSuite.pages.about_page import AboutPage
 from TestSuite.pages.new_post_page import NewPostPage
+from TestSuite.pages.view_post_page import ViewPostPage
 from TestSuite.test_data import base_url
 
 
@@ -16,6 +17,7 @@ def pages():
     login_page = LoginPage(driver)
     about_page = AboutPage(driver)
     new_post_page = NewPostPage(driver)
+    view_post_page = ViewPostPage(driver)
     logout_page = LogoutPage(driver)
     return locals()
 
