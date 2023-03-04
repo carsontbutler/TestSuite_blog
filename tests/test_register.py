@@ -9,8 +9,8 @@ class TestRegister(BaseTest):
     def test_go_to_register_page(self, go_home):
         home_pg = self.pages['home_page']
         register_pg = self.pages['register_page']
-
-        home_pg.click_register_link()
+        
+        home_pg.click(home_pg.REGISTER_LINK)
 
         assert register_pg._driver.title == register_pg.page_title
 
@@ -18,7 +18,7 @@ class TestRegister(BaseTest):
         register_pg = self.pages['register_page']
         home_pg = self.pages['home_page']
 
-        home_pg.click_register_link()
+        home_pg.click(home_pg.REGISTER_LINK)
         register_pg.click(register_pg.REGISTER_BTN)
 
         assert register_pg.get_element(register_pg.USERNAME_FIELD).get_attribute(
@@ -28,7 +28,7 @@ class TestRegister(BaseTest):
         register_pg = self.pages['register_page']
         home_pg = self.pages['home_page']
 
-        home_pg.click_register_link()
+        home_pg.click(home_pg.REGISTER_LINK)
         register_pg.send_keys(register_pg.EMAIL_FIELD, data['register']['email'])
         register_pg.send_keys(register_pg.PASSWORD1_FIELD, data['register']['password'])
         register_pg.send_keys(register_pg.PASSWORD2_FIELD, data['register']['password'])
@@ -41,7 +41,7 @@ class TestRegister(BaseTest):
         register_pg = self.pages['register_page']
         home_pg = self.pages['home_page']
 
-        home_pg.click_register_link()
+        home_pg.click(home_pg.REGISTER_LINK)
         register_pg.send_keys(register_pg.USERNAME_FIELD, data['register']['username'])
         register_pg.send_keys(register_pg.EMAIL_FIELD, data['register']['email'])
         register_pg.send_keys(register_pg.PASSWORD2_FIELD, data['register']['password'])
@@ -54,7 +54,7 @@ class TestRegister(BaseTest):
         register_pg = self.pages['register_page']
         home_pg = self.pages['home_page']
 
-        home_pg.click_register_link()
+        home_pg.click(home_pg.REGISTER_LINK)
         register_pg.send_keys(register_pg.USERNAME_FIELD, data['register']['username'])
         register_pg.send_keys(register_pg.EMAIL_FIELD, data['register']['email'])
         register_pg.send_keys(register_pg.PASSWORD1_FIELD, data['register']['password'])
@@ -67,7 +67,7 @@ class TestRegister(BaseTest):
         register_pg = self.pages['register_page']
         home_pg = self.pages['home_page']
 
-        home_pg.click_register_link()
+        home_pg.click(home_pg.REGISTER_LINK)
         register_pg.send_keys(register_pg.USERNAME_FIELD, data['register']['username'])
         register_pg.send_keys(register_pg.PASSWORD1_FIELD, data['register']['password'])
         register_pg.send_keys(register_pg.PASSWORD2_FIELD, data['register']['password'])
@@ -80,7 +80,7 @@ class TestRegister(BaseTest):
         register_pg = self.pages['register_page']
         home_pg = self.pages['home_page']
 
-        home_pg.click_register_link()
+        home_pg.click(home_pg.REGISTER_LINK)
         register_pg.send_keys(register_pg.USERNAME_FIELD, data['register']['username'])
         register_pg.send_keys(register_pg.EMAIL_FIELD, data['register']['email_invalid_1'])
         register_pg.send_keys(register_pg.PASSWORD1_FIELD, data['register']['password'])
@@ -94,7 +94,7 @@ class TestRegister(BaseTest):
         register_pg = self.pages['register_page']
         home_pg = self.pages['home_page']
 
-        home_pg.click_register_link()
+        home_pg.click(home_pg.REGISTER_LINK)
         register_pg.send_keys(register_pg.USERNAME_FIELD, data['register']['username'])
         register_pg.send_keys(register_pg.EMAIL_FIELD, data['register']['email_invalid_2'])
         register_pg.send_keys(register_pg.PASSWORD1_FIELD, data['register']['password'])
@@ -108,7 +108,7 @@ class TestRegister(BaseTest):
         register_pg = self.pages['register_page']
         home_pg = self.pages['home_page']
 
-        home_pg.click_register_link()
+        home_pg.click(home_pg.REGISTER_LINK)
         register_pg.send_keys(register_pg.USERNAME_FIELD, data['register']['username'])
         register_pg.send_keys(register_pg.EMAIL_FIELD, data['register']['email'])
         register_pg.send_keys(register_pg.PASSWORD1_FIELD, data['register']['password'])
