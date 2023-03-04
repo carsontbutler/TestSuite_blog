@@ -6,8 +6,8 @@ from TestSuite.pages.login_page import LoginPage
 from TestSuite.pages.logout_page import LogoutPage
 from TestSuite.pages.about_page import AboutPage
 from TestSuite.pages.new_post_page import NewPostPage
+from TestSuite.test_data import base_url
 
-base_url = 'http://localhost:8000'
 
 @pytest.fixture(scope="session")
 def pages():

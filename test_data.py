@@ -1,3 +1,4 @@
+base_url = 'http://localhost:8000'
 data = {
     "register": {'username': 'TestUser123',
                  'email': 'testing@test.com',
