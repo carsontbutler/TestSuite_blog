@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 class AboutPage(BasePage):
 
     #Properties
-    
+    slug = 'about'
 
     #Locators
     PAGE_HEADER = (By.XPATH, '/html/body/main/div/div[1]/h1')

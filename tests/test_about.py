@@ -2,7 +2,7 @@ import pytest
 from TestSuite.tests.test_base import BaseTest
 from TestSuite.test_data import data
 
-
+@pytest.mark.order(3)
 class TestAbout(BaseTest):
 
     def test_go_to_about_page(self, go_home):
