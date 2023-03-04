@@ -5,7 +5,7 @@ from TestSuite.pages.home_page import HomePage
 from TestSuite.pages.login_page import LoginPage
 from TestSuite.pages.logout_page import LogoutPage
 from TestSuite.pages.about_page import AboutPage
-from TestSuite.pages.blog_page import BlogPage
+from TestSuite.pages.new_post_page import NewPostPage
 
 base_url = 'http://localhost:8000'
 
@@ -15,7 +15,7 @@ def pages():
     home_page = HomePage(driver)
     login_page = LoginPage(driver)
     about_page = AboutPage(driver)
-    blog_page = BlogPage(driver)
+    new_post_page = NewPostPage(driver)
     logout_page = LogoutPage(driver)
     return locals()
 

@@ -1,6 +1,6 @@
 from TestSuite.pages.base_page import BasePage
 
-class BlogPage(BasePage):
+class NewPostPage(BasePage):
     #Properties
 
     #Locators
