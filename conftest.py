@@ -4,6 +4,8 @@ from TestSuite.pages.register_page import RegisterPage
 from TestSuite.pages.home_page import HomePage
 from TestSuite.pages.login_page import LoginPage
 from TestSuite.pages.logout_page import LogoutPage
+from TestSuite.pages.about_page import AboutPage
+from TestSuite.pages.blog_page import BlogPage
 
 base_url = 'http://localhost:8000'
 
@@ -12,6 +14,8 @@ def pages():
     register_page = RegisterPage(driver)
     home_page = HomePage(driver)
     login_page = LoginPage(driver)
+    about_page = AboutPage(driver)
+    blog_page = BlogPage(driver)
     logout_page = LogoutPage(driver)
     return locals()
 
