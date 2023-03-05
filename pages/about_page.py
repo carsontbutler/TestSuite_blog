@@ -11,5 +11,3 @@ class AboutPage(BasePage):
 
     #Expected outputs
     PAGE_HEADER_TEXT = 'About this website'
-    
-    pass

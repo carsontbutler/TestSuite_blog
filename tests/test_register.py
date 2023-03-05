@@ -1,5 +1,5 @@
 from TestSuite.tests.test_base import BaseTest
-from TestSuite.test_data import data
+from TestSuite.test_data import data, base_url
 import pytest
 
 
@@ -13,6 +13,7 @@ class TestRegister(BaseTest):
         home_pg.click(home_pg.REGISTER_LINK)
 
         assert register_pg._driver.title == register_pg.page_title
+        assert register_pg._driver.current_url == f'{base_url}/{register_pg.slug}/'
 
     def test_register_with_all_fields_blank(self, go_home):
         register_pg = self.pages['register_page']

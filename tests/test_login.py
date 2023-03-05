@@ -1,10 +1,18 @@
 import pytest
 from TestSuite.tests.test_base import BaseTest
-from TestSuite.test_data import data
+from TestSuite.test_data import data, base_url
 
 
 @pytest.mark.order(2)
 class TestLogin(BaseTest):
+
+    def test_go_to_login_page(self, go_home):
+        home_pg = self.pages['home_page']
+        login_pg = self.pages['login_page']
+
+        home_pg.click(home_pg.LOGIN_LINK)
+        assert login_pg._driver.title == login_pg.page_title
+        assert login_pg._driver.current_url == f'{base_url}/{login_pg.slug}/'
 
     def test_login_with_blank_password(self, go_home):
         home_pg = self.pages['home_page']

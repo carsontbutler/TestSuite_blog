@@ -1,6 +1,6 @@
 import pytest
 from TestSuite.tests.test_base import BaseTest
-from TestSuite.test_data import data
+from TestSuite.test_data import data, base_url
 
 
 @pytest.mark.order(4)
@@ -14,6 +14,7 @@ class TestNewPost(BaseTest):
 
         assert new_post_pg.get_element(
             new_post_pg.PAGE_HEADER).text == new_post_pg.PAGE_HEADER_TEXT
+        assert new_post_pg._driver.current_url == f'{base_url}/{new_post_pg.slug}/' 
 
     def test_create_new_post_with_blank_title(self, go_home):
         home_pg = self.pages['home_page']

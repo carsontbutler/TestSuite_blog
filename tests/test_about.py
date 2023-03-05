@@ -1,6 +1,6 @@
 import pytest
 from TestSuite.tests.test_base import BaseTest
-from TestSuite.test_data import data
+from TestSuite.test_data import data, base_url
 
 @pytest.mark.order(3)
 class TestAbout(BaseTest):
@@ -13,3 +13,4 @@ class TestAbout(BaseTest):
 
         assert about_pg.get_element(
             about_pg.PAGE_HEADER).text == about_pg.PAGE_HEADER_TEXT
+        assert about_pg._driver.current_url == f'{base_url}/{about_pg.slug}/'
