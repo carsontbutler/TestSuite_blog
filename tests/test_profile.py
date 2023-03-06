@@ -1,6 +1,7 @@
 import pytest
 from TestSuite.tests.test_base import BaseTest
-from TestSuite.test_data import data, base_url
+from TestSuite.test_data import data, base_url, base_dir
+import time
 
 
 class TestProfile(BaseTest):
@@ -41,7 +42,7 @@ class TestProfile(BaseTest):
             profile_pg.ALERT).text == profile_pg.UPDATE_SUCCESS_TEXT
         assert profile_pg.get_element(profile_pg.USERNAME_FIELD).get_attribute(
             'value') == data['profile']['username_changed']
-        
+
     def test_change_email(self, go_home):
         home_pg = self.pages['home_page']
         profile_pg = self.pages['profile_page']
@@ -50,8 +51,25 @@ class TestProfile(BaseTest):
         profile_pg.send_keys(profile_pg.EMAIL_FIELD,
                              data['profile']['email_changed'])
         profile_pg.click(profile_pg.UPDATE_BTN)
-        
+
         assert profile_pg.get_element(
             profile_pg.ALERT).text == profile_pg.UPDATE_SUCCESS_TEXT
         assert profile_pg.get_element(profile_pg.EMAIL_FIELD).get_attribute(
             'value') == data['profile']['email_changed']
+
+    def test_change_profile_pic(self, go_home):
+        home_pg = self.pages['home_page']
+        profile_pg = self.pages['profile_page']
+        profile_pic = data['profile']['new_profile_image_name']
+
+        home_pg.click(home_pg.PROFILE_LINK)
+        profile_pg.send_keys(profile_pg.IMAGE_FIELD,
+                             f'{base_dir}/media/{profile_pic}')
+        profile_pg.click(profile_pg.UPDATE_BTN)
+
+        assert profile_pg.get_element(
+            profile_pg.ALERT).text == profile_pg.UPDATE_SUCCESS_TEXT
+        assert profile_pg.get_element(
+            profile_pg.IMAGE_TITLE).text != 'default.jpg'
+        assert data['profile']['new_profile_image_name'].split('.')[0] in profile_pg.get_element(
+            profile_pg.IMAGE_TITLE).text

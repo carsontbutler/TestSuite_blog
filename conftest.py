@@ -8,7 +8,7 @@ from TestSuite.pages.about_page import AboutPage
 from TestSuite.pages.new_post_page import NewPostPage
 from TestSuite.pages.view_post_page import ViewPostPage
 from TestSuite.pages.profile_page import ProfilePage
-from TestSuite.test_data import base_url
+from TestSuite.test_data import base_url, base_dir
 
 
 @pytest.fixture(scope="session")
