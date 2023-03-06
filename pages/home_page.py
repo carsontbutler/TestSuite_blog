@@ -9,6 +9,7 @@ class HomePage(BasePage):
     REGISTER_LINK = (By.XPATH, '//*[@id="navbarToggle"]/div[2]/a[2]')
     ABOUT_LINK = (By.XPATH, '//*[@id="navbarToggle"]/div[1]/a[2]')
     NEW_POST_LINK = (By.XPATH, '//*[@id="navbarToggle"]/div[2]/a[1]')
+    PROFILE_LINK = (By.XPATH, '//*[@id="navbarToggle"]/div[2]/a[2]')
     LOGOUT_LINK = (By.XPATH, '//*[@id="navbarToggle"]/div[2]/a[3]')
 
     #Posts
