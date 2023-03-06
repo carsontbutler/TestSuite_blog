@@ -16,9 +16,9 @@ class TestProfile(BaseTest):
         profile_pg = self.pages['profile_page']
 
         home_pg.click(home_pg.PROFILE_LINK)
-        assert profile_pg.get_element(profile_pg.PROFILE_NAME).text == data['register']['username']
-        assert profile_pg.get_element(profile_pg.USERNAME_FIELD).get_attribute('value') == data['register']['username']
-        assert profile_pg.get_element(profile_pg.EMAIL_FIELD).get_attribute('value') == data['register']['email']
+        assert profile_pg.get_element(profile_pg.PROFILE_NAME).text == data['profile']['username']
+        assert profile_pg.get_element(profile_pg.USERNAME_FIELD).get_attribute('value') == data['profile']['username']
+        assert profile_pg.get_element(profile_pg.EMAIL_FIELD).get_attribute('value') == data['profile']['email']
         assert profile_pg.get_element(profile_pg.IMAGE_TITLE).text == 'default.jpg'
 
     

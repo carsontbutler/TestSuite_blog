@@ -1,6 +1,6 @@
 import pytest
 from TestSuite.tests.test_base import BaseTest
-from TestSuite.test_data import data, base_url
+from TestSuite.test_data import base_url
 
 @pytest.mark.order(3)
 class TestAbout(BaseTest):

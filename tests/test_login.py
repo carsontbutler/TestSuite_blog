@@ -19,7 +19,7 @@ class TestLogin(BaseTest):
         login_pg = self.pages['login_page']
 
         home_pg.click(login_pg.LOGIN_BTN)
-        login_pg.send_keys(login_pg.USERNAME_FIELD, data['register']['username'])
+        login_pg.send_keys(login_pg.USERNAME_FIELD, data['profile']['username'])
         login_pg.click(login_pg.LOGIN_BTN)
 
         assert login_pg.get_element(login_pg.PASSWORD_FIELD).get_attribute(
@@ -30,7 +30,7 @@ class TestLogin(BaseTest):
         login_pg = self.pages['login_page']
 
         home_pg.click(home_pg.LOGIN_LINK)
-        login_pg.send_keys(login_pg.PASSWORD_FIELD, data['register']['password'])
+        login_pg.send_keys(login_pg.PASSWORD_FIELD, data['profile']['password'])
         login_pg.click(login_pg.LOGIN_BTN)
 
         assert login_pg.get_element(login_pg.USERNAME_FIELD).get_attribute(
@@ -51,8 +51,8 @@ class TestLogin(BaseTest):
         login_pg = self.pages['login_page']
 
         home_pg.click(home_pg.LOGIN_LINK)
-        login_pg.send_keys(login_pg.USERNAME_FIELD, data['register']['username'])
-        login_pg.send_keys(login_pg.PASSWORD_FIELD, data['register']['password'])
+        login_pg.send_keys(login_pg.USERNAME_FIELD, data['profile']['username'])
+        login_pg.send_keys(login_pg.PASSWORD_FIELD, data['profile']['password'])
         login_pg.click(login_pg.LOGIN_BTN)
 
         assert home_pg.get_element(home_pg.LOGOUT_LINK).text == 'Logout'
