@@ -19,7 +19,10 @@ class TestRegister(BaseTest):
         assert register_pg._driver.current_url == f'{base_url}/{register_pg.slug}/'
 
     def test_register_with_all_fields_blank(self, go_home):
-        """Attempts to register a new user while leaving all inputs blank and verifies the attempt fails."""
+        """
+        Attempts to register a new user while leaving all inputs blank 
+        and verifies the attempt fails.
+        """
 
         register_pg = self.pages['register_page']
         home_pg = self.pages['home_page']
@@ -31,7 +34,10 @@ class TestRegister(BaseTest):
             "validationMessage") == register_pg.BLANK_INPUT_ERROR
 
     def test_register_with_blank_username(self, go_home):
-        """Attempts to register a new user while leaving the username field blank and verifies the attempt fails."""
+        """
+        Attempts to register a new user while leaving the username field blank
+          and verifies the attempt fails.
+        """
 
         register_pg = self.pages['register_page']
         home_pg = self.pages['home_page']
@@ -72,7 +78,10 @@ class TestRegister(BaseTest):
             register_pg.USERNAME_ERROR_LOCATOR).text
 
     def test_register_with_long_username(self, go_home):
-        """Attempts to type a username with length > 150 and verifies the input length stops at 150"""
+        """
+        Attempts to type a username with length > 150 and verifies
+        the input length stops at 150
+        """
         register_pg = self.pages['register_page']
         home_pg = self.pages['home_page']
 
@@ -194,7 +203,7 @@ class TestRegister(BaseTest):
 
     def test_register_with_valid_input(self, go_home):
         """Registers a new user with valid input and verifies the attempt was successful."""
-        
+
         register_pg = self.pages['register_page']
         home_pg = self.pages['home_page']
 

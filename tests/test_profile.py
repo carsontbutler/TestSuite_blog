@@ -17,7 +17,10 @@ class TestProfile(BaseTest):
         assert profile_pg._driver.current_url == f'{base_url}/{profile_pg.slug}/'
 
     def test_check_current_profile_info(self, go_home):
-        """Verifies that the information on the profile page matches the profile created during test_register_with_valid_input test"""
+        """
+        Verifies that the information on the profile page matches the 
+        profile created during test_register_with_valid_input test
+        """
 
         home_pg = self.pages['home_page']
         profile_pg = self.pages['profile_page']
@@ -65,7 +68,10 @@ class TestProfile(BaseTest):
             profile_pg.USERNAME_ERROR_LOCATOR).text == profile_pg.INVALID_USERNAME_ERROR_1
 
     def test_change_long_username(self, go_home):
-        """Attempts to input a username of length > 150 and verifies the text in the field stops at length=150"""
+        """
+        Attempts to input a username of length > 150 and verifies
+          the text in the field stops at length=150
+        """
 
         home_pg = self.pages['home_page']
         profile_pg = self.pages['profile_page']
