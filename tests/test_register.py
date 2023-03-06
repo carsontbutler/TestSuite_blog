@@ -89,7 +89,7 @@ class TestRegister(BaseTest):
         register_pg.click(register_pg.REGISTER_BTN)
 
         assert register_pg.get_element(
-            register_pg.ERROR_LIST).text == register_pg.INVALID_EMAIL_ERROR_1
+            register_pg.EMAIL_ERROR_LOCATOR).text == register_pg.INVALID_EMAIL_ERROR_1
 
     def test_register_with_invalid_email_2(self, go_home):
         register_pg = self.pages['register_page']
