@@ -2,6 +2,7 @@ from .base_page import BasePage
 from selenium.webdriver.common.by import By
 
 class RegisterPage(BasePage):
+    
     #Properties
     page_title = 'Django Blog'
     slug = 'register'

@@ -24,6 +24,7 @@ class TestNewPost(BaseTest):
         new_post_pg.send_keys(new_post_pg.CONTENT_FIELD,
                               data['blog']['content'])
         new_post_pg.click(new_post_pg.POST_BTN)
+        
         assert new_post_pg.get_element(new_post_pg.TITLE_FIELD).get_attribute(
             'validationMessage') == new_post_pg.BLANK_INPUT_ERROR
 
@@ -34,6 +35,7 @@ class TestNewPost(BaseTest):
         home_pg.click(home_pg.NEW_POST_LINK)
         new_post_pg.send_keys(new_post_pg.TITLE_FIELD, data['blog']['title'])
         new_post_pg.click(new_post_pg.POST_BTN)
+
         assert new_post_pg.get_element(new_post_pg.CONTENT_FIELD).get_attribute(
             'validationMessage') == new_post_pg.BLANK_INPUT_ERROR
 

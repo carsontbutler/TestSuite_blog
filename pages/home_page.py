@@ -3,7 +3,6 @@ from selenium.webdriver.common.by import By
 
 class HomePage(BasePage):
 
-
     #Top Navigation
     LOGIN_LINK = (By.XPATH, '//*[@id="navbarToggle"]/div[2]/a[1]')
     REGISTER_LINK = (By.XPATH, '//*[@id="navbarToggle"]/div[2]/a[2]')

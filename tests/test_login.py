@@ -11,6 +11,7 @@ class TestLogin(BaseTest):
         login_pg = self.pages['login_page']
 
         home_pg.click(home_pg.LOGIN_LINK)
+        
         assert login_pg._driver.title == login_pg.page_title
         assert login_pg._driver.current_url == f'{base_url}/{login_pg.slug}/'
 

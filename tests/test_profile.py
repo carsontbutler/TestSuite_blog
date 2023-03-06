@@ -10,6 +10,7 @@ class TestProfile(BaseTest):
         profile_pg = self.pages['profile_page']
 
         home_pg.click(home_pg.PROFILE_LINK)
+
         assert profile_pg._driver.current_url == f'{base_url}/{profile_pg.slug}/'
 
     def test_check_current_profile_info(self, go_home):
@@ -17,6 +18,7 @@ class TestProfile(BaseTest):
         profile_pg = self.pages['profile_page']
 
         home_pg.click(home_pg.PROFILE_LINK)
+
         assert profile_pg.get_element(
             profile_pg.PROFILE_NAME).text == data['profile']['username']
         assert profile_pg.get_element(profile_pg.USERNAME_FIELD).get_attribute(
@@ -34,6 +36,7 @@ class TestProfile(BaseTest):
         profile_pg.send_keys(profile_pg.USERNAME_FIELD,
                              data['profile']['username_changed'])
         profile_pg.click(profile_pg.UPDATE_BTN)
+
         assert profile_pg.get_element(
             profile_pg.ALERT).text == profile_pg.UPDATE_SUCCESS_TEXT
         assert profile_pg.get_element(profile_pg.USERNAME_FIELD).get_attribute(
@@ -47,6 +50,7 @@ class TestProfile(BaseTest):
         profile_pg.send_keys(profile_pg.EMAIL_FIELD,
                              data['profile']['email_changed'])
         profile_pg.click(profile_pg.UPDATE_BTN)
+        
         assert profile_pg.get_element(
             profile_pg.ALERT).text == profile_pg.UPDATE_SUCCESS_TEXT
         assert profile_pg.get_element(profile_pg.EMAIL_FIELD).get_attribute(

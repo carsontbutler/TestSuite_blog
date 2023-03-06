@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 
 
 class LoginPage(BasePage):
+    
     # Properties
     slug = 'login'
     page_title = 'Django Blog'

@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 
 
 class LogoutPage(BasePage):
+    
     #Properties
     slug = 'logout'
 
