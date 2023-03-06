@@ -7,6 +7,8 @@ from TestSuite.test_data import data, base_url
 class TestNewPost(BaseTest):
 
     def test_go_to_new_post_page(self, go_home):
+        """Goes to the new post page and verifies the page header and current url match expected results."""
+
         home_pg = self.pages['home_page']
         new_post_pg = self.pages['new_post_page']
 
@@ -17,6 +19,8 @@ class TestNewPost(BaseTest):
         assert new_post_pg._driver.current_url == f'{base_url}/{new_post_pg.slug}/' 
 
     def test_create_new_post_with_blank_title(self, go_home):
+        """Attempts to create a new post with an empty title and verifies the attempt fails."""
+        
         home_pg = self.pages['home_page']
         new_post_pg = self.pages['new_post_page']
 
@@ -29,6 +33,8 @@ class TestNewPost(BaseTest):
             'validationMessage') == new_post_pg.BLANK_INPUT_ERROR
 
     def test_create_new_post_with_blank_content(self, go_home):
+        """Attempts to create a new post with empty content and verifies the attempt fails."""
+
         home_pg = self.pages['home_page']
         new_post_pg = self.pages['new_post_page']
 
@@ -40,6 +46,9 @@ class TestNewPost(BaseTest):
             'validationMessage') == new_post_pg.BLANK_INPUT_ERROR
 
     def test_create_new_post_with_valid_input(self, go_home):
+        """Creates a new post with valid inputs and verifies the post is created successfully."""
+
+
         home_pg = self.pages['home_page']
         new_post_pg = self.pages['new_post_page']
         view_post_pg = self.pages['view_post_page']

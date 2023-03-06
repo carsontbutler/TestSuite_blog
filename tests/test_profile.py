@@ -7,6 +7,8 @@ from TestSuite.helpers import *
 class TestProfile(BaseTest):
 
     def test_go_to_profile_page(self, go_home):
+        """Goes to the profile page and verifies the current url matches the expected result."""
+
         home_pg = self.pages['home_page']
         profile_pg = self.pages['profile_page']
 
@@ -15,6 +17,8 @@ class TestProfile(BaseTest):
         assert profile_pg._driver.current_url == f'{base_url}/{profile_pg.slug}/'
 
     def test_check_current_profile_info(self, go_home):
+        """Verifies that the information on the profile page matches the profile created during test_register_with_valid_input test"""
+
         home_pg = self.pages['home_page']
         profile_pg = self.pages['profile_page']
 
@@ -31,6 +35,8 @@ class TestProfile(BaseTest):
 
     # USERNAME TESTS
     def test_change_username(self, go_home):
+        """Changes the username with valid input and verifies it was changed successfully"""
+
         home_pg = self.pages['home_page']
         profile_pg = self.pages['profile_page']
 
@@ -45,6 +51,8 @@ class TestProfile(BaseTest):
             'value') == data['profile']['username_changed']
 
     def test_change_username_invalid(self, go_home):
+        """Attempts to change username to one with invalid characters and verifies the attempt fails."""
+
         home_pg = self.pages['home_page']
         profile_pg = self.pages['profile_page']
 
@@ -57,6 +65,8 @@ class TestProfile(BaseTest):
             profile_pg.USERNAME_ERROR_LOCATOR).text == profile_pg.INVALID_USERNAME_ERROR_1
 
     def test_change_long_username(self, go_home):
+        """Attempts to input a username of length > 150 and verifies the text in the field stops at length=150"""
+
         home_pg = self.pages['home_page']
         profile_pg = self.pages['profile_page']
 
@@ -73,6 +83,8 @@ class TestProfile(BaseTest):
 
     # EMAIL TESTS
     def test_change_email(self, go_home):
+        """Changes the email to a valid email address and verifies the attempt succeeded."""
+
         home_pg = self.pages['home_page']
         profile_pg = self.pages['profile_page']
 
@@ -96,6 +108,8 @@ class TestProfile(BaseTest):
 
     # PROFILE PIC TESTS
     def test_change_profile_pic(self, go_home):
+        """Changes the profile pic and verifies the attempt was successful."""
+
         home_pg = self.pages['home_page']
         profile_pg = self.pages['profile_page']
         profile_pic = data['profile']['new_profile_image_name']
