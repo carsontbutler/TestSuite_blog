@@ -4,8 +4,6 @@ base_dir = os.path.dirname(os.path.abspath(__file__))
 data = {
     "profile": {'username': 'TestUser123',
                 'username_changed': 'TestUser456',
-                'username_invalid_1': 'MyUsername#',
-                'username_invalid_2': 'HereIsAUsernameThatIsLongerThan150CharactersImNotSureWhyAnyoneWouldNeedAUsernameThisLongHereIsAUsernameThatIsLongerThan150CharactersImNotSureWhyAnyoneWouldNeedAUsernameThisLong',
                 'email': 'testing@test.com',
                 'email_changed': 'changed@test.net',
                 "password": "TopSecret111",
