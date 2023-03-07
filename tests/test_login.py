@@ -23,7 +23,7 @@ class TestLogin(BaseTest):
         home_pg = self.pages['home_page']
         login_pg = self.pages['login_page']
 
-        home_pg.click(login_pg.LOGIN_BTN)
+        home_pg.click(home_pg.LOGIN_LINK)
         login_pg.send_keys(login_pg.USERNAME_FIELD, data['profile']['username'])
         login_pg.click(login_pg.LOGIN_BTN)
 

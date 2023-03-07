@@ -1,5 +1,6 @@
 import os
-base_url = 'http://localhost:8000'
+# base_url = 'http://localhost:8000'
+base_url = 'https://blog.carsonbutler.dev'
 base_dir = os.path.dirname(os.path.abspath(__file__))
 data = {
     "profile": {'username': 'TestUser123',
