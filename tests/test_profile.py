@@ -92,7 +92,7 @@ class TestProfile(BaseTest):
     def test_change_username_preexisting(self, go_home):
         """
         Attempts to change username to one that is taken by another user
-        and verifies that the attempt failed
+        and verifies that the attempt failed.
         """
 
         home_pg = self.pages['home_page']
