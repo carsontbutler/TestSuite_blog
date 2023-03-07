@@ -23,6 +23,7 @@ class ProfilePage(BasePage):
     # Expected outputs
     UPDATE_SUCCESS_TEXT = 'Your account has been updated!'
     INVALID_USERNAME_ERROR_1 = 'Enter a valid username. This value may contain only letters, numbers, and @/./+/-/_ characters.'
+    USERNAME_EXISTS_ERROR = 'A user with that username already exists.'
     INVALID_EMAIL_ERROR_1 = 'Enter a valid email address.'
     INVALID_FILE_ERROR_1 = 'Upload a valid image. The file you uploaded was either not an image or a corrupted image.'
     INVALID_EMAIL_ERROR_2 = "Please include an '@' in the email"
