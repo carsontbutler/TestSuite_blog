@@ -5,6 +5,7 @@ from TestSuite.test_data import base_url
 @pytest.mark.order(3)
 class TestAbout(BaseTest):
 
+
     def test_go_to_about_page(self, go_home):
         """Goes to the about page and makes sure the page header and URL match the expected results"""
 

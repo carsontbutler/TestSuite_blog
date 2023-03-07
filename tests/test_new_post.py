@@ -21,6 +21,7 @@ class TestNewPost(BaseTest):
             new_post_pg.PAGE_HEADER).text == new_post_pg.PAGE_HEADER_TEXT
         assert new_post_pg._driver.current_url == f'{base_url}/{new_post_pg.slug}/' 
 
+
     def test_create_new_post_with_blank_title(self, go_home):
         """
         Attempts to create a new post with an empty title and 
@@ -38,6 +39,7 @@ class TestNewPost(BaseTest):
         assert new_post_pg.get_element(new_post_pg.TITLE_FIELD).get_attribute(
             'validationMessage') == new_post_pg.BLANK_INPUT_ERROR
 
+
     def test_create_new_post_with_blank_content(self, go_home):
         """Attempts to create a new post with empty content and verifies the attempt fails."""
 
@@ -50,6 +52,7 @@ class TestNewPost(BaseTest):
 
         assert new_post_pg.get_element(new_post_pg.CONTENT_FIELD).get_attribute(
             'validationMessage') == new_post_pg.BLANK_INPUT_ERROR
+
 
     def test_create_new_post_with_valid_input(self, go_home):
         """Creates a new post with valid inputs and verifies the post is created successfully."""

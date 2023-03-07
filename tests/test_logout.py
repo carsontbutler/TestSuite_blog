@@ -5,6 +5,7 @@ from TestSuite.test_data import base_url
 @pytest.mark.order("last")
 class TestLogout(BaseTest):
 
+
     def test_logout(self, go_home): 
         """Attempts to log out and verifies logout was successful"""
         
