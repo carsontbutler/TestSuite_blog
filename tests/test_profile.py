@@ -105,12 +105,51 @@ class TestProfile(BaseTest):
             'value') == data['profile']['email_changed']
 
     def test_change_email_invalid_1(self, go_home):
-        # change email to data["profile"]["email_invalid_1"]
-        pass
+        """
+        Attempts to change the email to one that is missing a domain on the end 
+        and verifies that it fails.
+        """
+        home_pg = self.pages['home_page']
+        profile_pg = self.pages['profile_page']
+
+        home_pg.click(home_pg.PROFILE_LINK)
+        profile_pg.send_keys(profile_pg.EMAIL_FIELD,
+                             data['profile']['email_invalid_1'])
+        profile_pg.click(profile_pg.UPDATE_BTN)
+
+        assert profile_pg.get_element(profile_pg.EMAIL_ERROR_LOCATOR).text == profile_pg.INVALID_EMAIL_ERROR_1
+
+        
 
     def test_change_email_invalid_2(self, go_home):
-        # change email to data["profile"]["email_invalid_2"]
-        pass
+        """Attempts to change the email to one that is missing the '@' sign and verifies that it fails."""
+
+        home_pg = self.pages['home_page']
+        profile_pg = self.pages['profile_page']
+
+        home_pg.click(home_pg.PROFILE_LINK)
+        profile_pg.send_keys(profile_pg.EMAIL_FIELD,
+                             data['profile']['email_invalid_2'])
+        profile_pg.click(profile_pg.UPDATE_BTN)
+
+        assert profile_pg.INVALID_EMAIL_ERROR_2 in profile_pg.get_element(profile_pg.EMAIL_FIELD).get_attribute("validationMessage")
+
+    def test_change_profile_pic_to_invalid_file(self, go_home):
+        """
+        Attempts to change the profile pic using a filetype that isn't accepted 
+        and verifies that the attempt fails.
+        """
+
+        home_pg = self.pages['home_page']
+        profile_pg = self.pages['profile_page']
+        invalid_file = data['profile']['invalid_file_name']
+
+        home_pg.click(home_pg.PROFILE_LINK)
+        profile_pg.send_keys(profile_pg.IMAGE_FIELD,
+                             f'{base_dir}/media/{invalid_file}')
+        profile_pg.click(profile_pg.UPDATE_BTN)
+
+        assert profile_pg.get_element(profile_pg.FILE_ERROR_LOCATOR).text == profile_pg.INVALID_FILE_ERROR_1
 
     # PROFILE PIC TESTS
     def test_change_profile_pic(self, go_home):
