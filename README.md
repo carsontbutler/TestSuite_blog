@@ -1,6 +1,7 @@
 # TestSuite_blog
-This is a testing framework for a simple blog.
 
-I am currently working on UI tests, after which I plan to deploy the blog itself and add some API tests.
+This is a test suite I am making for a simple blog. It is driven by Selenium using Python and Pytest.
 
-I am designing the framework on my own. The blog was designed by Corey Schafer and can be found at: https://github.com/CoreyMSchafer/code_snippets/tree/master/Django_Blog
+The blog being tested can be found here: https://blog.carsonbutler.dev/
+
+The blog itself was designed by Corey Schafer and can be found here: https://github.com/CoreyMSchafer/code_snippets/tree/master/Django_Blog
