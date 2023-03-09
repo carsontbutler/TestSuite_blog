@@ -14,6 +14,10 @@ class BasePage:
         el = self._wait.until(EC.element_to_be_clickable(webelement))
         el.clear()
         el.send_keys(text)
+
+    def clear(self, webelement):
+        el = self._wait.until(EC.presence_of_element_located(webelement))
+        el.clear()
     
     def get_element(self, webelement):
         el = self._wait.until(EC.presence_of_element_located(webelement))

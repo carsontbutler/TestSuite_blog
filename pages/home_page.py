@@ -12,7 +12,8 @@ class HomePage(BasePage):
     LOGOUT_LINK = (By.XPATH, '//*[@id="navbarToggle"]/div[2]/a[3]')
 
     #Posts
-    POST_LINK = (By.CLASS_NAME, 'article-title')
+    POST_LINK = (By.CLASS_NAME, 'article-title') #Selects the first post on the page
+    POST_CONTENT = (By.CLASS_NAME, 'article-content')
 
     #Misc
     ALERT = (By.CLASS_NAME, 'alert')

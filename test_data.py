@@ -16,5 +16,8 @@ data = {
     "profile2": {"username": "ExistingUser",
                  "email": "ExistingUser@mywebsite.com"},
     "blog": {"title": "My Blog Post 1",
-             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt lorem nisl, non iaculis quam efficitur vitae. Aliquam erat volutpat. Aliquam ut vulputate metus, eget suscipit elit."}
+             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt lorem nisl, non iaculis quam efficitur vitae. Aliquam erat volutpat. Aliquam ut vulputate metus, eget suscipit elit.",
+             "title2": "My New Post Title",
+             "content2": "Here is my updated post content. Enjoy!"
+             },
 }
