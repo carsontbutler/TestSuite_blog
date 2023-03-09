@@ -8,7 +8,7 @@ class RegisterPage(BasePage):
     slug = 'register'
 
     #Locators
-    REGISTER_BTN = (By.XPATH, '/html/body/main/div/div[1]/div/form/div/button')
+    REGISTER_BTN = (By.XPATH, '//button[text()="Sign Up"]')
     USERNAME_FIELD = (By.ID, 'id_username')
     EMAIL_FIELD = (By.ID, 'id_email')
     PASSWORD1_FIELD = (By.ID, 'id_password1')

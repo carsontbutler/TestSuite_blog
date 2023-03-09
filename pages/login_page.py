@@ -11,10 +11,9 @@ class LoginPage(BasePage):
     # Locators
     USERNAME_FIELD = (By.ID, 'id_username')
     PASSWORD_FIELD = (By.ID, 'id_password')
-    LOGIN_BTN = (By.XPATH, '/html/body/main/div/div[1]/div/form/div/button')
-    FORGOT_PASSWORD_BTN = (
-        By.XPATH, '/html/body/main/div/div[1]/div/form/div/small/a')
-    SIGN_UP_BTN = (By.XPATH, '/html/body/main/div/div[1]/div/div/small/a')
+    LOGIN_BTN = (By.XPATH, '//button[text()="Login"]')
+    FORGOT_PASSWORD_BTN = (By.XPATH, '//a[text()="Forgot password?"]')
+    SIGN_UP_BTN = (By.XPATH, '//a[text()="Sign Up Now"]')
 
     # Expected outputs
     BLANK_INPUT_ERROR = 'Please fill out this field.'

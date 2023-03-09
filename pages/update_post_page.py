@@ -9,7 +9,7 @@ class UpdatePostPage(BasePage):
     #Locators
     TITLE_FIELD = (By.ID, 'id_title')
     CONTENT_FIELD = (By.ID, 'id_content')
-    POST_BTN = (By.XPATH, '/html/body/main/div/div[1]/div/form/div/button')
+    POST_BTN = (By.XPATH, '//button[text()="Post"]')
 
     #Expected outputs
     BLANK_INPUT_ERROR = 'Please fill out this field.'

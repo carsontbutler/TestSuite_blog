@@ -7,7 +7,7 @@ class AboutPage(BasePage):
     slug = 'about'
 
     #Locators
-    PAGE_HEADER = (By.XPATH, '/html/body/main/div/div[1]/h1')
+    PAGE_HEADER = (By.XPATH, '//h1[text()="About this website"]')
 
     #Expected outputs
     PAGE_HEADER_TEXT = 'About this website'

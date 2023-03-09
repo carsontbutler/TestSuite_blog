@@ -8,8 +8,7 @@ class LogoutPage(BasePage):
     slug = 'logout'
 
     #Locators
-    LOGOUT_MESSAGE = (By.XPATH, '/html/body/main/div/div[1]/h2')
+    LOGOUT_MESSAGE = (By.XPATH, '//h2[text()="You have been logged out"]')
 
     #Expected outputs
     LOGGED_OUT_TEXT = 'You have been logged out'
-    
