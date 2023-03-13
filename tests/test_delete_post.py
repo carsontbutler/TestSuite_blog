@@ -43,4 +43,4 @@ class TestDeletePost(BaseTest):
         view_pg.click(view_pg.DELETE_BTN)
         delete_pg.click(delete_pg.DELETE_BTN)
 
-        pass #still need to fix this assertion
+        assert home_pg.check_for_element(home_pg.POST_LINK) == False

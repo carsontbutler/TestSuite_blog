@@ -23,3 +23,10 @@ class BasePage:
     def get_element(self, webelement):
         el = self._wait.until(EC.presence_of_element_located(webelement))
         return el
+    
+    def check_for_element(self, webelement):
+        try:
+            el = self._driver.find_element(webelement)
+            return True
+        except:
+            return False
