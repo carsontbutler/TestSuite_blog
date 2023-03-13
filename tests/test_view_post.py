@@ -6,7 +6,6 @@ import pytest
 @pytest.mark.order(5)
 class TestViewPost(BaseTest):
     # as of right now this finds the most recently created post
-    # so it should run after the new_post tests
 
     def test_view_post(self, go_home):
         home_pg = self.pages['home_page']

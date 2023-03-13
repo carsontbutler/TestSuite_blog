@@ -8,6 +8,7 @@ from TestSuite.pages.about_page import AboutPage
 from TestSuite.pages.new_post_page import NewPostPage
 from TestSuite.pages.view_post_page import ViewPostPage
 from TestSuite.pages.update_post_page import UpdatePostPage
+from TestSuite.pages.delete_post_page import DeletePostPage
 from TestSuite.pages.profile_page import ProfilePage
 from TestSuite.test_data import base_url, base_dir
 
@@ -21,6 +22,7 @@ def pages():
     new_post_page = NewPostPage(driver)
     view_post_page = ViewPostPage(driver)
     update_post_page = UpdatePostPage(driver)
+    delete_post_page = DeletePostPage(driver)
     profile_page = ProfilePage(driver)
     logout_page = LogoutPage(driver)
     return locals()

@@ -3,7 +3,7 @@ from TestSuite.tests.test_base import BaseTest
 from TestSuite.test_data import data, base_url, base_dir
 from TestSuite.helpers import *
 
-
+@pytest.mark.order(8)
 class TestProfile(BaseTest):
 
 
