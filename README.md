@@ -1,6 +1,7 @@
 # TestSuite_blog
 
-This is a test suite I am making for a simple blog. It is driven by Selenium using Python and Pytest.
+This is a UI test suite for a simple blog. 
+It is driven by Selenium using Python and Pytest.
 
 The blog being tested can be found here: https://blog.carsonbutler.dev/
 
